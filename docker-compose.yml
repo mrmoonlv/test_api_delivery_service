@@ -1,0 +1,41 @@
+version: "3.1"
+
+networks:
+  bridge:
+
+services:
+    postgres:
+      image: postgres:9.5-alpine
+      container_name: ${PROJECT_NAME}_postgres_data
+      volumes:
+         - "./data/postgres:/var/lib/postgresql/data"
+      environment:
+        - POSTGRES_USER=${POSTGRES_USER}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+        - POSTGRES_DB=${POSTGRES_DB}
+      ports:
+       - "5432:5432"
+      networks:
+        - bridge
+
+    webserver:
+      image: nginx:alpine
+      container_name: ${PROJECT_NAME}_webserver
+      working_dir: /src
+      volumes:
+          - ./src:/src
+          - ./config/nginx:/etc/nginx/conf.d
+      ports:
+       - "80:80"
+      networks:
+        - bridge
+
+    php-fpm:
+      build: config/php-fpm
+      container_name: ${PROJECT_NAME}_php-fpm
+      working_dir: /src
+      volumes:
+        - ./src:/src
+        - ./data/php/vendor:/src/vendor
+      networks:
+        - bridge
