@@ -15,7 +15,7 @@
 
 ## API Reference
 #### Authorization
-For each request need provide `token` field with value from Users Reference table
+For each request need provide `token` field with value from Users Reference table in request headers
 
 
 #### Shipping cost calculation
