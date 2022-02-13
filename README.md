@@ -10,8 +10,8 @@
 | `customer`| `9c92n3i29ni3291i31093i92i3293` | ***Customer 1*** Can create orders / calculate shipping cost | 
 | `customer`| `dfldkf034k3lk13045l24k240240k` | ***Customer 2*** Can create orders / calculate shipping cost |
 | `customer`| `c34m34304cj304c93403940394304` | ***Customer 3*** Can create orders / calculate shipping cost |
-| `courier` | `9c9c34m304i304i2l4024i02i3293` | ***Customer 3*** Can view orders |
-| `sales_manager` | `9c9c34m304i304i2l4024i02i3293` | ***Customer 3*** Can view/create orders   |
+| `courier` | `9c9c34m304i304i2l4024i02i3293` | ***Courier*** Can view orders |
+| `sales_manager` | `9c9c34m304i304i2l4024i02i3293` | ***Manager*** Can view/create orders   |
 
 ## API Reference
 #### Authorization
